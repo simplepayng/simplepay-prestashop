@@ -1,0 +1,43 @@
+select.form-control {
+	width: 100%;
+}
+
+.btn-simplepay {
+	background: #77439e;
+	color: #ffffff;
+}
+
+.btn-simplepay:hover {
+	color: #ffffff !important;
+}
+
+.margin-top-sm {
+	margin-top: 10px;
+}
+
+.margin-top-md {
+	margin-top: 16px;
+}
+
+.warning {
+	font-weight: bold;
+	color: #df0101;
+}
+
+/* Payment Page */
+.payment {
+	padding: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid #d6d4d4;
+	cursor: pointer;
+}
+
+.payment:hover,
+.payment:focus {
+	background: #fbfbfb;
+}
+
+.payment span {
+	margin-right: 10px;
+}
