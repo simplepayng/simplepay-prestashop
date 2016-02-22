@@ -31,7 +31,12 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Type: application/json',                                                                                
     'Content-Length: ' . strlen($data_string)                                                                       
 ));
-curl_exec($ch);
+
+$curl_response = curl_exec($ch);
+$curl_response = preg_split("/\r\n\r\n/",$curl_response);
+$response_content = $curl_response[1];
+$json_response = json_decode(chop($response_content), TRUE);
+
 $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 curl_close($ch);
@@ -41,7 +46,7 @@ if ($response_code == '200')
 	$id_order_state = Configuration::get('PS_OS_PAYMENT');
 
 	$simplepay->validateOrder((int)$cart->id, $id_order_state, $_POST['ps_amount'], $simplepay->displayName, $response_code, 
-	array('transaction_id' => $_POST['reference']), false, false, $cart->secure_key);
+	array('transaction_id' => $json_response['customer_reference']), false, false, $cart->secure_key);
 } 
 else 
 {

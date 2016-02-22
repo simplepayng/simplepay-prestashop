@@ -24,11 +24,10 @@ function formatAmount(amount) {
 
 var amount = formatAmount('{$amount}');
 
-function processPayment (token, reference) {
+function processPayment (token) {
 	var form = $('<form />', { action: '{$module_dir}validate.php', method: 'POST' });
 	form.append(
 		$('<input />', { name: 'token', type: 'hidden', value: token }),
-		$('<input />', { name: 'reference', type: 'hidden', value: reference }),
 		$('<input />', { name: 'amount', type: 'hidden', value: amount }),
 		$('<input />', { name: 'ps_amount', type: 'hidden', value: '{$amount}' })
 	);
