@@ -8,7 +8,7 @@ class SimplePay extends PaymentModule
 	{
 		$this->name = 'simplepay';
 		$this->tab = 'payments_gateways';
-		$this->version = '1.0.1';
+		$this->version = '1.0.2';
 		$this->author = 'SimplePay';
 		$this->need_instance = 1;
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
@@ -35,7 +35,7 @@ class SimplePay extends PaymentModule
   			$this->registerHook('footer') &&
   			$this->registerHook('payment') &&
   			$this->registerHook('paymentReturn') &&
-			Configuration::updateValue('SIMPLEPAY_TEST_MODE', 1);
+			Configuration::updateValue('SIMPLEPAY_TEST_MODE', 0);
 
 	}
 

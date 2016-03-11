@@ -2,7 +2,7 @@
 <module>
 	<name>simplepay</name>
 	<displayName><![CDATA[SimplePay]]></displayName>
-	<version><![CDATA[1.0.0]]></version>
+	<version><![CDATA[1.0.2]]></version>
 	<description><![CDATA[Online and Mobile Payment. Secure. Simple.]]></description>
 	<author><![CDATA[SimplePay]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>
