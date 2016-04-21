@@ -1,3 +1,7 @@
+## 1.0.3 (April 21, 2016)
+
+- Fix payment button style in checkout view 
+
 ## 1.0.2 (March 7, 2016)
 
 - Fixed test mode default value

@@ -1,7 +1,13 @@
-<div id="btn-checkout" class="payment">
-	<span>Pay now with</span>
-	<img src="{$module_dir}views/templates/img/logo-payment.png" alt="SimplePay Pay Button" />
+<div class="row">
+	<div class="col-xs-12">
+        <p class="payment_module">
+		<a class="simplepay_button js_button_checkout" href="#" rel="nofollow">
+			<img src="http://assets.simplepay.ng/buttons/pay_medium_dark.png" alt="SimplePay Pay Button" />
+		</a>
+	</p>
+    </div>
 </div>
+
 <script src="https://checkout.simplepay.ng/simplepay.js"></script>
 <script type="text/javascript">
 function formatAmount(amount) {
@@ -41,9 +47,9 @@ var handler = SimplePay.configure({
 	image: '{$image}'
 });
 
-$('#btn-checkout').on('click', function (e) {
-    handler.open(SimplePay.CHECKOUT,
-    {
+$('.js_button_checkout').on('click', function (e) {
+    	e.preventDefault();
+	handler.open(SimplePay.CHECKOUT,{
 		email: '{$email}',
 		phone: '{$phone}',
 		description: '{$description}',
@@ -53,6 +59,7 @@ $('#btn-checkout').on('click', function (e) {
 		country: '{$country}',
 		amount: amount,
 		currency: '{$currency->iso_code}'
-    });
+    	});
 });
+
 </script>
